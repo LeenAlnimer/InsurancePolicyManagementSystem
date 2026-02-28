@@ -1,62 +1,109 @@
- Insurance Policy Management System
+# 🏦 Insurance Policy Management System
 
-A console-based insurance management system built with C# following SOLID principles and clean architecture concepts.
+A console-based insurance management system built with C# following SOLID principles, layered architecture, and unit testing best practices.
 
-## 🚀 Features
+---
 
-- Create Car Insurance Policy
-- Create Health Insurance Policy
+ 🚀 Features
+
+- Create Car Insurance Policies
+- Create Health Insurance Policies
 - View All Policies
-- Submit Claims
-- Policy Validation
-- Custom Exception Handling
+- Submit Insurance Claims
 - Premium Calculation Logic
+- Business Rule Validation
+- Custom Exception Handling
+- Unit Testing for Core Business Logic
 
 ---
 
  🏗 Architecture
 
-The project follows a layered architecture:
+The project follows a clean layered architecture:
 
-- Models → Business entities (Policy, CarInsurancePolicy, HealthInsurancePolicy, Claim)
-- Services → Business logic layer (PolicyService)
-- Data → Generic Repository pattern
-- Exceptions → Custom validation exceptions
-- Program.cs → Presentation layer (Console UI)
+### 📁 Layers
+
+- **Models**  
+  Business entities (Policy, CarInsurancePolicy, HealthInsurancePolicy, Claim, RiskLevel)
+
+- **Services**  
+  Business logic layer (PolicyService)
+
+- **Data**  
+  Generic Repository pattern for data abstraction
+
+- **Exceptions**  
+  Custom validation exceptions
+
+- **Program.cs**  
+  Presentation layer (Console UI)
+
+- **Tests Project**  
+  xUnit-based Unit Tests covering business rules and validations
 
 ---
 
-🧠 SOLID Principles Used
+## 🧪 Unit Testing
 
-- **S** – Single Responsibility Principle  
-- **O** – Open/Closed Principle  
-- **L** – Liskov Substitution Principle  
-- **I** – Interface Segregation Principle  
-- **D** – Dependency Inversion Principle  
+The project includes a dedicated test project using **xUnit**.
+
+### Covered Scenarios:
+
+- Premium calculation validation
+- Invalid driver age handling
+- Invalid health policy age handling
+- Coverage validation
+- Claim amount exceeding coverage
+- Successful claim submission behavior
+
+Unit tests ensure business rules remain stable and prevent regression bugs during future modifications.
 
 ---
- 🛠 Technologies
+
+## 🧠 SOLID Principles Applied
+
+- **S – Single Responsibility Principle**  
+  Each class has a clear and focused responsibility.
+
+- **O – Open/Closed Principle**  
+  Policies can be extended without modifying existing logic.
+
+- **L – Liskov Substitution Principle**  
+  Car and Health policies can be used through the base Policy abstraction.
+
+- **I – Interface Segregation Principle**  
+  Services depend on clear and focused interfaces.
+
+- **D – Dependency Inversion Principle**  
+  High-level modules depend on abstractions (IPolicyService).
+
+---
+
+## 🛠 Technologies Used
 
 - C#
 - .NET
-- OOP
+- Object-Oriented Programming (OOP)
 - Repository Pattern
+- xUnit Testing Framework
 - Custom Exception Handling
 
 ---
 
- ▶ How to Run
+## ▶ How to Run
 
 1. Clone the repository
 2. Open in Visual Studio
-3. Run the project
+3. Run the main project to start the Console application
+4. Run the test project to execute all unit tests
 
 ---
 
- 📌 Future Improvements
+## 📌 Future Improvements
 
 - Add Database Integration
-- Add Dependency Injection
-- Convert to Web API
-- Add Unit Testing
-
+- Implement Dependency Injection Container
+- Convert to ASP.NET Core Web API
+- Add Integration Tests
+- Implement Logging
+- Increase Test Coverage
